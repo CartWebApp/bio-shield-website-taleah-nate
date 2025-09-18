@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+</style>
+  <title>exterminators</title>
+  <link rel="stylesheet" href="bs.css">
+  <header>
+    
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
+      </div>
+      <h1 class="bungee gradient">Bio-Shield</h1>
+    <ul class="navbar-links">
+      <li><a href="home.html" alt="Home page">Home</a></li>
+      <li><a href="store.html" alt="Store Page">Store</a></li>
+      <li><a href="about.html" alt="About Us">About Us</a></li>
+      <li> <a href="support.html"alt="Support Page">Support</a></li>
+    </ul>
+  </nav>
+   </header>
+</head>
+<body>
+    <h1>Your Cart</h1>
+<div id="cart-container"></div>
+<a href="store.html">Continue Shopping</a>
+
+<script>
+  const cartContainer = document.getElementById('cart-container');
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+  } else {
+    let html = '<ul>';
+    let total = 0;
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+      html += `<li>${item.name} - $${item.price.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}</li>`;
+    });
+    html += `</ul><p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+    cartContainer.innerHTML = html;
+  }
+</script>
+</body>
+
+

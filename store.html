@@ -82,14 +82,14 @@
     <li>
       <img src="images/PyroPestv3.jpg" alt="The New PyroPest" />
       <h3>PyroPest T5 V3</h3>
-      <p>the most innovative, and effective model to date.</p>
+      <p>The most innovative and effective model to date.</p>
       <div class="price">$199.99</div>
       <button>Add to Cart</button>
     </li>
     <li>
       <img src="images/PyroPestv2.jpg" alt="Xtreme PyroPest" />
       <h3>Xtreme PyroPest</h3>
-      <p>Becuase bugs deserve brutality.</p>
+      <p>Because bugs deserve brutality.</p>
       <div class="price">$199.99</div>
       <button>Add to Cart</button>
     </li>
@@ -101,6 +101,31 @@
       <button>Add to Cart</button>
     </li>
   </ul>
-
+  <script>
+    // JavaScript to handle adding to cart
+    const buttons = document.querySelectorAll('.add-to-cart');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const product = btn.parentElement;
+        const id = product.dataset.id;
+        const name = product.dataset.name;
+        const price = product.dataset.price;
+  
+        // Get current cart from localStorage or empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+        // Check if product already in cart
+        let existing = cart.find(item => item.id === id);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ id, name, price: parseFloat(price), quantity: 1 });
+        }
+  
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
 </body>
 </html>
