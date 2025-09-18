@@ -1,32 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="bs.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-</style>
-  <title>exterminators</title>
-  <link rel="stylesheet" href="bs.css">
-  <header>
-    
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
-      </div>
-      <h1 class="bungee gradient">Bio-Shield</h1>
-    <ul class="navbar-links">
-      <li><a href="home.html" alt="Home page">Home</a></li>
-      <li><a href="store.html" alt="Store Page">Store</a></li>
-      <li><a href="about.html" alt="About Us">About Us</a></li>
-      <li> <a href="support.html"alt="Support Page">Support</a></li>
-    </ul>
-  </nav>
-   </header>
+  </style>
+  <script>
+    const items = [
+      "PyroPest T5 V3",
+      "Xtreme PyroPest",
+      "PyroPest HT V1"
+    ];
 
+    function searchItems() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
+
+      if (input === '') {
+        return; // no input, no results
+      }
+
+      const filtered = items.filter(item => item.toLowerCase().includes(input));
+
+      if (filtered.length === 0) {
+        resultsDiv.innerHTML = '<em>No results found</em>';
+        return;
+      }
+
+      filtered.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('result-item');
+        div.textContent = item;
+        div.onclick = () => alert(`You selected: ${item}`);
+        resultsDiv.appendChild(div);
+      });
+    }
+  </script>
+  <title>exterminators</title>
+  <style>
+    #results {
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      max-width: 300px;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+    }
+
+    .result-item {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .result-item:hover {
+      background-color: #efefef;
+    }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>User Support</h1>
+
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="images/Biologo.jpg" alt="Bio-Shield logo" />
+      </div>
+      <h1 class="bungee gradient">Bio-Shield</h1>
+      <ul class="navbar-links">
+        <li><a href="home.html" alt="Home page">Home</a></li>
+        <li><a href="store.html" alt="Store Page">Store</a></li>
+        <li><a href="about.html" alt="About Us">About Us</a></li>
+        <li> <a href="support.html" alt="Support Page">Support</a></li>
+      </ul>
+      <section id="search">
+
+        <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()"
+        autocomplete="off" />
+        
+        <div id="results"></div>
+      </section>
+
+    </nav>
   </header>
+
+
+  </style>
+  </head>
+
+  <body>
+<h1> USER SUPPORT</h1>
+

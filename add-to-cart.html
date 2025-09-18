@@ -1,53 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-</style>
-  <title>exterminators</title>
-  <link rel="stylesheet" href="bs.css">
-  <header>
-    
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
-      </div>
-      <h1 class="bungee gradient">Bio-Shield</h1>
-    <ul class="navbar-links">
-      <li><a href="home.html" alt="Home page">Home</a></li>
-      <li><a href="store.html" alt="Store Page">Store</a></li>
-      <li><a href="about.html" alt="About Us">About Us</a></li>
-      <li> <a href="support.html"alt="Support Page">Support</a></li>
-    </ul>
-  </nav>
-   </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faux-Cart Demo</title>
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="js/faux-cart.js"></script>
 </head>
+
 <body>
-    <h1>Your Cart</h1>
-<div id="cart-container"></div>
-<a href="store.html">Continue Shopping</a>
+    <nav>
+        <a href="index.html">Demo</a>
+        <a href="cart.html">Cart<span id="cartItemCount"></span></a>
+        <a href="https://github.com/HerrSchnell/faux-cart" target="_blank">GitHub</a>
+    </nav>
+    <main>
+        <header>
+            <h1>Faux Cart Demo</h1>
+            <p>Faux Cart is a JavaScript project designed to emulate shopping cart behavior on static websites. It uses
+                local storage to emulate server side functionality.</p>
+        </header>
+        <h2>Your Cart</h2>
+        
+        <div id="cart">
 
-<script>
-  const cartContainer = document.getElementById('cart-container');
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
 
-  if (cart.length === 0) {
-    cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-  } else {
-    let html = '<ul>';
-    let total = 0;
-    cart.forEach(item => {
-      const itemTotal = item.price * item.quantity;
-      total += itemTotal;
-      html += `<li>${item.name} - $${item.price.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}</li>`;
-    });
-    html += `</ul><p><strong>Total: $${total.toFixed(2)}</strong></p>`;
-    cartContainer.innerHTML = html;
-  }
-</script>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;2023 Jared Fast</p>
+    </footer>
+
 </body>
 
-
+</html>
