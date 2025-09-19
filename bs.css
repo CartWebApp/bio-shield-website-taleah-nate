@@ -332,14 +332,10 @@ button:hover {
     margin: 8px 0;
 }
 
-.scale-in {
-  transform: scale (0);           /* Start scaled down (invisible) */
-  animation: scaleIn 0.5s ease forwards;  /* Animate to full size */
+.available-stores img {
+  width: 100px;   /* or whatever small size you want */
+  height: auto;   /* keeps the aspect ratio */
 }
 
-@keyframes scaleIn {
-  to {
-    transform: scale(1);         /* End at normal size */
-  }
-}
+
   

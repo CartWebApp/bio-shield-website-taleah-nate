@@ -6,20 +6,21 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
 </style>
-  <title>exterminators</title>
+  <title>Store</title>
   <link rel="stylesheet" href="bs.css">
   <header>
     
     <nav class="navbar">
       <div class="navbar-logo">
         <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
+        <h1 class="bungee gradient">Bio-Shield</h1>
       </div>
-      <h1 class="bungee gradient">Bio-Shield</h1>
     <ul class="navbar-links">
-      <li><a href="home.html" alt="Home page">Home</a></li>
+      <li><a href="index.html" alt="Home page">Home</a></li>
       <li><a href="store.html" alt="Store Page">Store</a></li>
       <li><a href="about.html" alt="About Us">About Us</a></li>
       <li><a href="support.html" alt="support page">Support</a></li>
+      <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()" autocomplete="off">
     </ul>
   </nav>
    </header>
@@ -82,7 +83,7 @@
   <ul class="products">
     <li>
       <img src="images/PyroPestv3.jpg" alt="The New PyroPest" />
-      <h3>PyroPest T5 V3</h3>
+      <h3><a href="pyropest-t5-v3.html">PyroPest T5 V3</a></h3>
       <p>The most innovative and effective model to date.</p>
       <div class="price">$199.99</div>
       <button>Add to Cart</button>
@@ -102,19 +103,47 @@
       <button>Add to Cart</button>
     </li>
     <li>
-    <img src="images/Shield-off 67 (1).jpg" alt="Tick repellent"/>
-      <h3></h3>
-      <p>Shield-Off</p>
-      <div class="price">$199.99</div>
+    <img src="images/Shield-off 67 (1).jpg" alt="Bug Repellent 10"/>
+      <h3>Shield-Off Insect Repellent 10 OZ.</h3>
+      <p>Bug off you dang insects!</p>
+      <div class="price">$11.99</div>
       <button>Add to Cart</button>
     </li>
     <li>
-      <img src="images/PyroPestv1.jpg" alt="PyroPest V1" />
-      <h3>PyroPest HT V1</h3>
-      <p>Obliterate the apocalyptic infestation.</p>
-      <div class="price">$89.99</div>
-      <button>Add to Cart</button>
-    </li>
+      <img src="images/Shield-off 67 (2).jpg" alt="Bug Repellent 6"/>
+        <h3>Shield-Off Insect Repellent 6 OZ.</h3>
+        <p>Bugs aren't immune to this stuff.</p>
+        <div class="price">$9.99</div>
+        <button>Add to Cart</button>
+      </li>
+      <li>
+        <img src="images/Shield-off 67 (3).jpg" alt="Tick Repellent 6"/>
+          <h3>Shield-Off Tick Repellent 6 OZ.</h3>
+          <p>Make ticks fear you as you pass by.</p>
+          <div class="price">$10.99</div>
+          <button>Add to Cart</button>
+        </li>
+        <li>
+          <img src="images/Shield-off 67 (1).jpg" alt="Bug Repellent"/>
+            <h3>Shield-Off Insect Repellent 8 OZ.</h3>
+            <p>Keep bugs away all day, every day.</p>
+            <div class="price">$11.99</div>
+            <button>Add to Cart</button>
+          </li>
+          <li>
+          <img src="images/The Lighter (1).jpg" alt="The lighter"/>
+          <h3>The Lighter 01</h3>
+          <p>Eliminations on the fly.</p>
+          <div class="price">$17.99</div>
+          <button>Add to Cart</button>
+        </li> 
+        <li>
+        <img src="images/The Lighter (2).jpg" alt="The lighter 2"/>
+        <h3>The Lighter Igniter</h3>
+        <p>Eow with twice the light, twice the power, and twice the price.</p>
+        <div class="price">$25.99</div>
+        <button>Add to Cart</button>
+      </li>
   </ul>
   <script>
     // JavaScript to handle adding to cart
