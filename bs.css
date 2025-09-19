@@ -277,3 +277,69 @@ button:hover {
   border-radius: 5px;
   font-family: Arial, sans-serif;
 }
+
+        .image-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        .image-footer img {
+            width: 30%;
+            margin: 0 10px;
+        }
+
+.shop-button {
+    position: absolute;
+    top: 150px; /* move button above the images */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(236, 66, 47);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 2;
+} 
+
+.shop-button:hover {
+    background-color: #e55c00;
+
+}
+
+.available-stores {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.available-stores h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.available-stores ul {
+    list-style: none;
+    padding: 0;
+}
+
+.available-stores li {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.scale-in {
+  transform: scale (0);           /* Start scaled down (invisible) */
+  animation: scaleIn 0.5s ease forwards;  /* Animate to full size */
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);         /* End at normal size */
+  }
+}
+  
