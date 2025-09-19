@@ -240,6 +240,31 @@ button:hover {
   }
 }
 
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;       /* middle of image */
+  left: 50%;      /* center horizontally */
+  transform: translate(-50%, -50%);
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7); /* makes text readable */
+}
+
 
 .caption {
   position: absolute;
