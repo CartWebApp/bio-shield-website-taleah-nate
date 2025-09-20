@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xtreme PyroPest - Bio-Shield</title>
+  <link rel="stylesheet" href="bs.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Bungee Spice', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 30px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-logo h1 {
+      color: #f16245;
+      font-size: 2.5rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #f16245;
+    }
+
+    .product-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+      margin: 40px auto;
+      gap: 40px;
+      padding: 40px;
+      background: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .product-img {
+      position: relative;
+      max-width: 600px;
+      height: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-img:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .product-info h1 {
+      font-size: 3rem;
+      color: #f16245;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .product-info p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      color: #f16245;
+      font-weight: bold;
+    }
+
+    .buy-now {
+      padding: 15px 30px;
+      background: #f16245;
+      color: white;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .buy-now:hover {
+      background: #d94f2b;
+    }
+
+    .highlight {
+      color: #f16245;
+      font-weight: bold;
+    }
+
+    .product-info,
+    .product-img {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .product-info {
+      animation-delay: 0.2s;
+    }
+
+    .product-img {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .warnings {
+      background: #ffecd1;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .warnings h2 {
+      font-size: 2rem;
+      color: #d94f2b;
+      margin-bottom: 15px;
+    }
+
+    .warnings ul {
+      list-style: none;
+      font-size: 1.1rem;
+      padding-left: 20px;
+      color: #444;
+    }
+
+    .warnings ul li {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <h1>Bio-Shield</h1>
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="store.html">Store</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+    </div>
+  </nav>
+
+  <!-- Product Page -->
+  <div class="product-page">
+    <div class="product-img">
+      <img src="images/PyroPestv2.jpg" alt="Xtreme PyroPest">
+    </div>
+    <div class="product-info">
+      <h1>Xtreme PyroPest</h1>
+      <p>The <span class="highlight">Xtreme PyroPest</span> is *not* for the faint of heart. This isn't your average flamethrower. No, this is a fire-spitting, bug-scorching, yard-purging MONSTER. With the latest tech, more firepower, and a design that screams "I mean business," the Xtreme PyroPest is your go-to weapon for dealing with pests that think they own your space.<br><br>We're talking 20 feet of pure fire. We're talking about a weapon so powerful, it might just scorch the Earth itself (okay, not literally, but you get the idea).</p>
+      
+      <div class="price">$499.99</div>
+      <button class="buy-now" onclick="window.location.href='store.html'">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <div class="product-details">
+    <h2>What's Inside the Xtreme PyroPest?</h2>
+    <p>The Xtreme PyroPest has all the bells and whistles—because we know you don't just want any flamethrower. You want the best, and we deliver:</p>
+    <ul>
+      <li>**20 feet** of continuous flame output—if the bugs are 20 feet away, they’re still *toast*.</li>
+      <li>Reinforced, military-grade fuel cell with **5x the burn time** of regular models. Seriously, this thing lasts longer than your last family reunion.</li>
+      <li>Advanced precision flame control. Roast, toast, or just lightly singe. You choose!</li>
+      <li>Ergonomically designed to handle even the most extreme situations—whether you're in your backyard or on your top-secret anti-bug mission.</li>
+      <li>Warning: This isn't a product. It's a way of life. Use at your own risk.</li>
+    </ul>
+
+    <h2>How to Use</h2>
+    <p>Before you unleash the Xtreme PyroPest, make sure you’re fully prepared to scorch your surroundings (and hopefully, not your neighbors' plants). Here's the step-by-step:</p>
+    <ol>
+      <li>Charge your Xtreme PyroPest for 4 hours. Think of it like charging up your inner fire spirit. (Patience is key.)</li>
+      <li>Switch on the power and make sure you’re not too close to anything flammable—unless, of course, you’re aiming to start an action movie scene.</li>
+      <li>Stand back, aim the nozzle, and unleash the fury of fire! We recommend a **20-foot distance** for maximum destruction.</li>
+      <li>Feel free to roast bugs, pests, and maybe even a marshmallow if you're feeling adventurous.</li>
+      <li>Afterward, sit back, admire your work, and remember: You just did that. You. Are. The. Fire.</li>
+    </ol>
+  </div>
+
+  <!-- Warnings Section -->
+  <div class="warnings">
+    <h2>Important Warnings:</h2>
+    <ul>
+      <li>Do NOT point at anything you value (like your home, your neighbor's dog, or your sense of responsibility).</li>
+      <li>Use ONLY in well-ventilated areas. Preferably outside. This thing's got power, and your living room isn't equipped for it.</li>
+      <li>For the love of fire safety, please wear protective gear. It’s a flamethrower, not a new fashion statement.</li>
+      <li>Keep away from flammable structures and children who think fire is just “cool” and “awesome.”</li>
+      <li>The Xtreme PyroPest may cause significant changes in the ecosystem of your backyard. Plants may spontaneously combust, and animals may develop an intense fear of you. Handle with caution!</li>
+      <li>It’s a flamethrower. You’re going to have to sign some waivers. We’re serious.</li>
+    </ul>
+  </div>
+
+</body>
+</html>

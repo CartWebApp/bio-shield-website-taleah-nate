@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PyroPest T5 V1 - Bio-Shield</title>
+  <link rel="stylesheet" href="bs.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Bungee Spice', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 30px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-logo h1 {
+      color: #f16245;
+      font-size: 2.5rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #f16245;
+    }
+
+    .product-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+      margin: 40px auto;
+      gap: 40px;
+      padding: 40px;
+      background: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .product-img {
+      position: relative;
+      max-width: 600px;
+      height: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-img:hover img {
+      transform: scale(1.1);
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .product-info h1 {
+      font-size: 3rem;
+      color: #f16245;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .product-info p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      color: #f16245;
+      font-weight: bold;
+    }
+
+    .buy-now {
+      padding: 15px 30px;
+      background: #f16245;
+      color: white;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .buy-now:hover {
+      background: #d94f2b;
+    }
+
+    .highlight {
+      color: #f16245;
+      font-weight: bold;
+    }
+
+    .product-info,
+    .product-img {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .product-info {
+      animation-delay: 0.2s;
+    }
+
+    .product-img {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .warnings {
+      background: #ffecd1;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .warnings h2 {
+      font-size: 2rem;
+      color: #d94f2b;
+      margin-bottom: 15px;
+    }
+
+    .warnings ul {
+      list-style: none;
+      font-size: 1.1rem;
+      padding-left: 20px;
+      color: #444;
+    }
+
+    .warnings ul li {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <h1>Bio-Shield</h1>
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="store.html">Store</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+    </div>
+  </nav>
+
+  <!-- Product Page -->
+  <div class="product-page">
+    <div class="product-img">
+      <img src="images/PyroPestv1.jpg" alt="PyroPest T5 V1">
+    </div>
+    <div class="product-info">
+      <h1>PyroPest T5 V1</h1>
+      <p>Old but gold. The <span class="highlight">PyroPest T5 V1</span> is our original flamethrower, bringing fire-based pest elimination to a whole new level of scorch. Sure, it’s not the latest model, but it gets the job done with classic, fiery fury. This is the flamethrower that started it all, and it's still heating up infestations one bug at a time.</p>
+      
+      <div class="price">$89.99</div>
+      <button class="buy-now" onclick="window.location.href='store.html'">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <div class="product-details">
+    <h2>What's Inside the PyroPest T5 V1?</h2>
+    <p>All the essentials for burning bugs to a crisp:</p>
+    <ul>
+      <li>Old-school flame-throwing nozzle: you won’t get the same precision as the T5 V3, but it still gets the job done.</li>
+      <li>Rechargeable fuel cell—this bad boy can toast for hours before needing a recharge.</li>
+      <li>Flame control for those precise "I want to burn this spot but not everything around it" moments.</li>
+      <li>Classic, ergonomic design that feels like a piece of history in your hands (but still with 100% burn-your-problems-away power).</li>
+      <li>Warning: The T5 V1 has an old-school “cool factor,” but is still capable of scorching entire colonies of bugs. Handle with care.</li>
+    </ul>
+
+    <h2>How to Use</h2>
+    <p>Step into the flames (safely) and use your PyroPest T5 V1 like a pro:</p>
+    <ol>
+      <li>Charge the PyroPest T5 V1 for 2-3 hours (don’t skip this step unless you enjoy working with half a flamethrower).</li>
+      <li>Flip the safety switch to “ON” (we're serious about safety here). No accidental fireballs!</li>
+      <li>Hold the nozzle 4-8 feet away from your target. Aim it like a bug-hunting marksman.</li>
+      <li>Press the trigger and let the flames do their magic. Say goodbye to bugs!</li>
+      <li>Remember: You're holding fire—use it responsibly. This is a tool of extermination, not a party favor!</li>
+    </ol>
+  </div>
+
+  <!-- Warnings Section -->
+  <div class="warnings">
+    <h2>Important Warnings:</h2>
+    <ul>
+      <li>Do NOT aim at any living creature, including bugs and any unsuspecting neighbors.</li>
+      <li>Do NOT use near combustible materials, such as gasoline. (unless you want your lawn to be the next fire festival).</li>
+      <li>Keep out of reach of children and pets (We learned our lesson). They don't need to be learning about fire safety with your flamethrower. wait....</li>
+      <li>Ensure you have a safe, non-flammable area for use. Don't go trying to start a bonfire in the backyard without some precautions.</li>
+      <li><strong>Not a toy.</strong> You will definitely need to sign a waiver (figuratively, of course).</li>
+    </ul>
+  </div>
+
+</body>
+</html>

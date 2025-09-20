@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PyroPest T5 V3 - Bio-Shield</title>
+  <link rel="stylesheet" href="bs.css">
+  <style>
+    /* Resetting some styles for cleaner layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Bungee Spice', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 30px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-logo h1 {
+      color: #f16245;
+      font-size: 2.5rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #f16245;
+    }
+
+    /* Main product page layout */
+    .product-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
+      margin: 40px auto;
+      gap: 40px;
+      padding: 40px;
+      background: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    /* Product image section */
+    .product-img {
+      position: relative;
+      max-width: 600px;
+      height: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-img:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Product description and buy section */
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .product-info h1 {
+      font-size: 3rem;
+      color: #f16245;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .product-info p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      color: #f16245;
+      font-weight: bold;
+    }
+
+    .buy-now {
+      padding: 15px 30px;
+      background: #f16245;
+      color: white;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .buy-now:hover {
+      background: #d94f2b;
+    }
+
+    /* Text effects */
+    .highlight {
+      color: #f16245;
+      font-weight: bold;
+    }
+
+    /* Animation on page load */
+    .product-info,
+    .product-img {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .product-info {
+      animation-delay: 0.2s;
+    }
+
+    .product-img {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile layout */
+    @media (max-width: 768px) {
+      .product-page {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .product-info h1 {
+        font-size: 2rem;
+      }
+
+      .buy-now {
+        font-size: 1.1rem;
+        padding: 12px 24px;
+      }
+    }
+
+    /* Warnings Section */
+    .warnings {
+      background: #ffecd1;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .warnings h2 {
+      font-size: 2rem;
+      color: #d94f2b;
+      margin-bottom: 15px;
+    }
+
+    .warnings ul {
+      list-style: none;
+      font-size: 1.1rem;
+      padding-left: 20px;
+      color: #444;
+    }
+
+    .warnings ul li {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <h1>Bio-Shield</h1>
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="store.html">Store</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+    </div>
+  </nav>
+
+  <!-- Product Page -->
+  <div class="product-page">
+    <div class="product-img">
+      <img src="images/PyroPestv3.jpg" alt="PyroPest T5 V3">
+    </div>
+    <div class="product-info">
+      <h1>PyroPest T5 V3</h1>
+      <p>The <span class="highlight">PyroPest T5 V3</span> isn't just a flamethrower. It's a declaration. A declaration that your pest problem is about to meet a fiery end.<br><br>With a sleek design and the latest in flame-throwing technology, this weapon of mass destruction will obliterate insects with a simple squeeze of the trigger. It's time to bring the heat and make those bugs wish they'd never crossed your path. From the backyard to your kitchen—<span class="highlight">PyroPest</span> does it all.</p>
+      
+      <div class="price">$199.99</div>
+      <button class="buy-now" onclick="window.location.href='store.html'">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Product Details -->
+  <div class="product-details">
+    <h2>What's Inside the PyroPest T5 V3?</h2>
+    <p>Packed with cutting-edge tech and an unquenchable thirst for bug annihilation, the PyroPest T5 V3 features:</p>
+    <ul>
+      <li>Flame-throwing nozzle designed for precision and maximum burn.</li>
+      <li>Rechargeable fuel cell with a range of up to 10 feet for long-distance "bug dispatching."</li>
+      <li>Advanced flame control for everything from small bugs to large infestations.</li>
+      <li>A sturdy, ergonomic handle for optimal grip during those long bug-busting sessions.</li>
+      <li>Warning: Do not point at friends or pets (unless they have a genuine love for fire-based humor).</li>
+    </ul>
+
+    <h2>How to Use</h2>
+    <p>Ready to light up your pest problems? Here's how to do it:</p>
+    <ol>
+      <li>Charge the PyroPest T5 V3 for 3-4 hours before use.</li>
+      <li>Turn the safety switch to "ON"—we can't trust you with firepower without a little safety, okay?</li>
+      <li>Hold the nozzle 5-10 feet from your target (the bugs, not your houseplants).</li>
+      <li>Squeeze the trigger and watch as pests meet their fiery demise.</li>
+      <li>Remember: use responsibly. PyroPest is a tool of destruction, not a backyard BBQ gimmick!</li>
+    </ol>
+  </div>
+
+  <!-- Warnings Section -->
+  <div class="warnings">
+    <h2>Important Warnings:</h2>
+    <ul>
+      <li>Do NOT use near extremely flammable objects unless you're trying to turn your backyard into a gender reveal party gone awry.</li>
+      <li>Keep away from small children, pets, and anyone with a tendency to wander into your fire zone. We don’t want to end up in an action movie.</li>
+      <li>
