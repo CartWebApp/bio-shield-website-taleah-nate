@@ -1,33 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-</style>
-  <title>exterminators</title>
+  </style>
+  <title>Home- Bio-Shield</title>
+  <meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
   <link rel="stylesheet" href="bs.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">  <script>
+    const items = [
+  { name: "PyroPest T5 V3", img: "images/PyroPestv3.jpg", url: "pyropest-t5-v3.html" },
+  { name: "Xtreme PyroPest", img: "images/PyroPestv2.jpg", url: "xtreme-pyropest.html" },
+  { name: "PyroPest HT V1", img: "images/PyroPestv1.jpg", url: "pyropest-ht-v1.html" },
+  { name: "Shield-Off Insect Repellent 10 OZ.", img: "images/Shield-off 67 (1).jpg", url: "#" },
+  { name: "Shield-Off Insect Repellent 6 OZ.", img: "images/Shield-off 67 (2).jpg", url: "#" },
+  { name: "Shield-Off Tick Repellent 6 OZ.", img: "images/Shield-off 67 (3).jpg", url: "#" },
+  { name: "Shield-Off Insect Repellent 8 OZ.", img: "images/Shield-off 67 (1).jpg", url: "#" },
+  { name: "The Lighter 01", img: "images/The Lighter (1).jpg", url: "#" },
+  { name: "The Lighter Igniter", img: "images/The Lighter (2).jpg", url: "#" }
+];
+
+
+
+    function searchItems() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
+
+  if (input === '') {
+    return; // no input, no results
+  }
+
+  const filtered = items.filter(item => item.name.toLowerCase().includes(input));
+
+  if (filtered.length === 0) {
+    resultsDiv.innerHTML = '<em>No results found</em>';
+    return;
+  }
+
+  filtered.forEach(item => {
+  const div = document.createElement('div');
+  div.classList.add('result-item');
+
+  // Create a container for image and text
+  const container = document.createElement('span');
+  container.style.display = 'flex';
+  container.style.alignItems = 'center';
+
+  // Create image element
+  const img = document.createElement('img');
+  img.src = item.img;
+  img.alt = item.name;
+  img.style.width = '40px';
+  img.style.height = '40px';
+  img.style.objectFit = 'contain';
+  img.style.marginRight = '10px';
+
+  // Create text node
+  const text = document.createElement('span');
+  text.textContent = item.name;
+  text.style.fontSize = '1rem';
+
+  // Append img and text to container
+  container.appendChild(img);
+  container.appendChild(text);
+  div.appendChild(container);
+
+  div.onclick = () => window.location.href = item.url;
+  resultsDiv.appendChild(div);
+  });
+}
+
+  
+  </script>
+  <title>exterminators</title>
+  <style>
+    #results {
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      max-width: 300px;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+    }
+
+    .result-item {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .result-item:hover {
+      background-color: #efefef;
+    }
+  </style>
+</head>
+
+<body>
   <header>
-    
     <nav class="navbar">
       <div class="navbar-logo">
         <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
         <h1 class="bungee gradient">Bio-Shield</h1>
       </div>
-    <ul class="navbar-links">
-      <li><a href="index.html" alt="Home page">Home</a></li>
-      <li><a href="store.html" alt="Store Page">Store</a></li>
-      <li><a href="about.html" alt="About Us">About Us</a></li>
-      <li> <a href="support.html"alt="Support Page">Support</a></li>
-      <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()" autocomplete="off">
-    </ul>
-  </nav>
-   </header>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+            <section id="search">
 
-  </style>
-</head>
-<body>
+        <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()"
+        autocomplete="off" />
+        
+        <div id="results"></div>
+      </section>
+    </nav>
+  </header>
   <header>
     <h1>About Us</h1>
   </header>

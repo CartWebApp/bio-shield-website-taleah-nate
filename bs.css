@@ -339,6 +339,7 @@ button:hover {
 
     body {
       font-family: Arial, sans-serif;
+        padding-top: 80px
     }
     .hero img {
       width: 100%;
@@ -470,7 +471,12 @@ button:hover {
 .faq ul li {
   margin: 10px 0;
   font-size: 1.1rem;
-}footer {
+}
+  .product-page {
+  margin-top: 80px; /* Adjust this value based on the height of your navbar */
+}
+
+footer {
       text-align: center;
       margin-top: 40px;
       padding: 20px;

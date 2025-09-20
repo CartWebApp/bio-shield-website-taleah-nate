@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Bio-Shield</title>
+  <link rel="stylesheet" href="bs.css">
+  <style>
+    .cart-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .cart-items li {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-items li img {
+      max-width: 50px;
+      height: auto;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    .cart-items li .item-info {
+      flex-grow: 1;
+    }
+
+    .cart-items li .item-info h3 {
+      margin: 5px 0;
+    }
+
+    .cart-items li .item-info .price {
+      color: #f16245;
+      font-weight: bold;
+    }
+
+    .cart-items li .item-info .quantity {
+      margin-top: 5px;
+    }
+
+    .cart-items li button.remove-item {
+      background-color: #e74c3c;
+      border: none;
+      padding: 8px 14px;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cart-items li button.remove-item:hover {
+      background-color: #c0392b;
+    }
+
+    .cart-summary {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .cart-summary button {
+      background-color: #2ecc71;
+      border: none;
+      padding: 12px 20px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart-summary button:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
+        <h1 class="bungee gradient">Bio-Shield</h1>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Your Cart</h1>
+  <ul class="cart-items" id="cart-items">
+    <!-- Cart items will be inserted here dynamically -->
+  </ul>
+
+  <div class="cart-summary">
+    <div>Total:</div>
+    <div id="total-price">$0.00</div>
+  </div>
+
+  <div class="cart-summary">
+    <button onclick="checkout()">Proceed to Checkout</button>
+  </div>
+
+  <script>
+    // Load cart items from localStorage and display them
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItemsContainer = document.getElementById('cart-items');
+      const totalPriceContainer = document.getElementById('total-price');
+      
+      let totalPrice = 0;
+      cartItemsContainer.innerHTML = ''; // Clear existing items
+
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div class="item-info">
+            <h3>${item.name}</h3>
+            <div class="price">$${item.price}</div>
+            <div class="quantity">
+              Quantity: <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.id}', this.value)">
+            </div>
+          </div>
+          <button class="remove-item" onclick="removeItem('${item.id}')">Remove</button>
+        `;
+        cartItemsContainer.appendChild(li);
+        totalPrice += item.price * item.quantity;
+      });
+
+      totalPriceContainer.textContent = `$${totalPrice.toFixed(2)}`;
+    }
+
+    // Update the quantity of an item in the cart
+    function updateQuantity(id, quantity) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.quantity = parseInt(quantity);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart(); // Reload the cart to reflect changes
+      }
+    }
+
+    // Remove an item from the cart
+    function removeItem(id) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart(); // Reload the cart after removal
+    }
+
+    // Checkout (you can replace this with a checkout process)
+    function checkout() {
+      alert('Proceeding to checkout...');
+      // Add your checkout logic here
+    }
+
+    // Load cart on page load
+    loadCart();
+  </script>
+</body>
+</html>
+
