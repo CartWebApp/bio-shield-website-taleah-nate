@@ -22,7 +22,7 @@
     }
 
     .cart-items li img {
-      max-width: 50px;
+      max-width: 80px; /* Adjusted for better image size */
       height: auto;
       border-radius: 5px;
       margin-right: 10px;
@@ -78,6 +78,12 @@
     .cart-summary button:hover {
       background-color: #27ae60;
     }
+
+    .empty-cart {
+      text-align: center;
+      color: #888;
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -118,21 +124,25 @@
       const cartItemsContainer = document.getElementById('cart-items');
       const totalPriceContainer = document.getElementById('total-price');
       
-      let totalPrice = 0;
-      cartItemsContainer.innerHTML = ''; // Clear existing items
+      // Clear existing items and handle empty cart case
+      cartItemsContainer.innerHTML = '';
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<li class="empty-cart">Your cart is empty!</li>';
+      }
 
+      let totalPrice = 0;
       cart.forEach(item => {
         const li = document.createElement('li');
         li.innerHTML = `
-          <img src="${item.img}" alt="${item.name}">
+          <img src="${item.img}" alt="${item.name.replace(/"/g, '')}">
           <div class="item-info">
             <h3>${item.name}</h3>
-            <div class="price">$${item.price}</div>
+            <div class="price">$${item.price.toFixed(2)}</div>
             <div class="quantity">
               Quantity: <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity('${item.id}', this.value)">
             </div>
           </div>
-          <button class="remove-item" onclick="removeItem('${item.id}')">Remove</button>
+          <button class="remove-item" aria-label="Remove ${item.name}" onclick="removeItem('${item.id}')">Remove</button>
         `;
         cartItemsContainer.appendChild(li);
         totalPrice += item.price * item.quantity;
@@ -143,6 +153,10 @@
 
     // Update the quantity of an item in the cart
     function updateQuantity(id, quantity) {
+      if (quantity < 1) {
+        alert("Quantity cannot be less than 1.");
+        return;
+      }
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
       const item = cart.find(i => i.id === id);
       if (item) {
@@ -171,4 +185,3 @@
   </script>
 </body>
 </html>
-

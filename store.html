@@ -3,286 +3,222 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
+    <title>Exterminators - Bio-Shield</title>
+    <link rel="stylesheet" href="bs.css">
+  <script src="Essentials.js"></script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-      </style>
-      <title>exterminators</title>
-    <header>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
-        <h1 class="bungee gradient">Bio-Shield</h1>
-      </div>
-      <ul class="navbar-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="support.html">Support</a></li>
-      </ul>
-            <section id="search">
-    
-        <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()"
-        autocomplete="off" />
-        
-        <div id="results"></div>
-      </section>
-    </nav>
-  </header>
-  <title>Exterminators- Bio-Shield</title>
-  <meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
-  <link rel="stylesheet" href="bs.css">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">  <script>
-    const items = [
-  { name: "PyroPest T5 V3", img: "images/PyroPestv3.jpg", url: "pyropest-t5-v3.html" },
-  { name: "Xtreme PyroPest", img: "images/PyroPestv2.jpg", url: "xtreme-pyropest.html" },
-  { name: "PyroPest HT V1", img: "images/PyroPestv1.jpg", url: "pyropest-ht-v1.html" },
-  { name: "Shield-Off Insect Repellent 10 OZ.", img: "images/Shield-off 67 (1).jpg", url: "#" },
-  { name: "Shield-Off Insect Repellent 6 OZ.", img: "images/Shield-off 67 (2).jpg", url: "#" },
-  { name: "Shield-Off Tick Repellent 6 OZ.", img: "images/Shield-off 67 (3).jpg", url: "#" },
-  { name: "Shield-Off Insect Repellent 8 OZ.", img: "images/Shield-off 67 (1).jpg", url: "#" },
-  { name: "The Lighter 01", img: "images/The Lighter (1).jpg", url: "#" },
-  { name: "The Lighter Igniter", img: "images/The Lighter (2).jpg", url: "#" }
-];
+      
+      #results {
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        max-width: 300px;
+        padding: 5px;
+        font-family: Arial, sans-serif;
+      }
 
+      .result-item {
+        padding: 5px;
+        cursor: pointer;
+      }
 
+      .result-item:hover {
+        background-color: #efefef;
+      }
 
-    function searchItems() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  const resultsDiv = document.getElementById('results');
-  resultsDiv.innerHTML = '';
+      ul.products {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
 
-  if (input === '') {
-    return; // no input, no results
-  }
+      ul.products li {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        width: 250px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
 
-  const filtered = items.filter(item => item.name.toLowerCase().includes(input));
-  
-  if (filtered.length === 0) {
-    resultsDiv.innerHTML = '<em>No results found</em>';
-    return;
-  }
+      ul.products li img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+      }
 
-  filtered.forEach(item => {
-    const div = document.createElement('div');
-  div.classList.add('result-item');
-  
-  // Create a container for image and text
-  const container = document.createElement('span');
-  container.style.display = 'flex';
-  container.style.alignItems = 'center';
-  
-  // Create image element
-  const img = document.createElement('img');
-  img.src = item.img;
-  img.alt = item.name;
-  img.style.width = '40px';
-  img.style.height = '40px';
-  img.style.objectFit = 'contain';
-  img.style.marginRight = '10px';
-  
-  // Create text node
-  const text = document.createElement('span');
-  text.textContent = item.name;
-  text.style.fontSize = '1rem';
-  
-  // Append img and text to container
-  container.appendChild(img);
-  container.appendChild(text);
-  div.appendChild(container);
-  
-  div.onclick = () => window.location.href = item.url;
-  resultsDiv.appendChild(div);
-});
-}
+      ul.products li h3 {
+        margin: 10px 0 5px;
+        font-size: 1.2rem;
+      }
 
-  
-</script>
-  <style>
-    #results {
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      max-width: 300px;
-      padding: 5px;
-      font-family: Arial, sans-serif;
-    }
-    
-    .result-item {
-      padding: 5px;
-      cursor: pointer;
-    }
+      ul.products li p {
+        margin: 0 0 10px;
+        color: #555;
+      }
 
-    .result-item:hover {
-      background-color: #efefef;
-    }
-</style>
-   </header>
-  <style>
-    ul.products {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    
-    ul.products li {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 15px;
-      width: 250px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    
-    ul.products li img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
+      ul.products li .price {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #f16245;
+      }
 
-    ul.products li h3 {
-      margin: 10px 0 5px;
-      font-size: 1.2rem;
-    }
+      ul.products li button {
+        margin-top: 10px;
+        padding: 8px 14px;
+        background-color: rgba(236, 60, 20, 0.918);
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-    ul.products li p {
-      margin: 0 0 10px;
-      color: #555;
-    }
-    
-    ul.products li .price {
-      font-weight: bold;
-      font-size: 1.1rem;
-      color: #f16245;
-    }
+      ul.products li button:hover {
+        background-color: #f0ed3b;
+      }
 
-    ul.products li button {
-      margin-top: 10px;
-      padding: 8px 14px;
-      background-color: rgba(236, 60, 20, 0.918);
-      border: none;
-      color: hsl (255, 95, 31);
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    ul.products li button:hover {
-      background-color: #f0ed3b;
-    }
-
+      @media (max-width: 768px) {
+        ul.products {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
     </style>
-
-</head>
-<body>
-  <h1>Exterminators</h1>
-  <ul class="products">
-    <li>
-      <a href="PyroPest3.html">
-        <img src="images/PyroPestv3.jpg" alt="The New PyroPest" />
-        <h3>PyroPest HT V3</h3>
-        <p>The most innovative and effective model to date.</p>
-        <div class="price">$199.99</div>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-logo">
+          <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
+          <h1 class="bungee gradient">Bio-Shield</h1>
+        </div>
+        <ul class="navbar-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+        <section id="search">
+                   <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()" autocomplete="off" />
+          <div id="results"></div>
+        </section>
+      </nav>
+    </header>
+  
+    <h1>Exterminators</h1>
+    <ul class="products">
+      <li data-id="1" data-name="PyroPest HT V3" data-price="199.99">
+        <a href="PyroPest3.html">
+          <img src="images/PyroPestv3.jpg" alt="The New PyroPest" />
+          <h3>PyroPest HT V3</h3>
+          <p>The most innovative and effective model to date.</p>
+          <div class="price">$199.99</div>
         </a>
         <button class="add-to-cart">Add to Cart</button>
-        </li>
-    <li>
-      <a href="XtremePest.html">
-        <img src="images/PyroPestv2.jpg" alt="Xtreme PyroPest" />
-        <h3>Xtreme PyroPest</h3>
-        <p>Because bugs deserve brutality.</p>
-        <div class="price">$199.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-    <li>
-      <a href="PyroPest1.html">
-        <img src="images/PyroPestv1.jpg" alt="PyroPest V1" />
-        <h3>PyroPest HT V1</h3>
-        <p>Obliterate the apocalyptic infestation.</p>
-        <div class="price">$89.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-    <li>
-      <a href="shield-off-10oz.html">
-        <img src="images/Shield-off 67 (1).jpg" alt="Bug Repellent 10"/>
-        <h3>Shield-Off Insect Repellent 10 OZ.</h3>
-        <p>Bug off you dang insects!</p>
-        <div class="price">$11.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-    <li>
-      <a href="shield-off-6oz.html">
-        <img src="images/Shield-off 67 (2).jpg" alt="Bug Repellent 6"/>
-        <h3>Shield-Off Insect Repellent 6 OZ.</h3>
-        <p>Bugs aren't immune to this stuff.</p>
-        <div class="price">$9.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-    <li>
-      <a href="shield-off-tick-repellent.html">
-        <img src="images/Shield-off 67 (3).jpg" alt="Tick Repellent 6"/>
-        <h3>Shield-Off Tick Repellent 6 OZ.</h3>
-        <p>Make ticks fear you as you pass by.</p>
-        <div class="price">$10.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-    <li>
-      <a href="shield-off-8oz.html">
-        <img src="images/Shield-off 67 (1).jpg" alt="Bug Repellent"/>
-        <h3>Shield-Off Insect Repellent 8 OZ.</h3>
-        <p>Keep bugs away all day, every day.</p>
-        <div class="price">$11.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-    <li>
-      <a href="the-lighter-01.html">
-        <img src="images/The Lighter (1).jpg" alt="The lighter"/>
-        <h3>The Lighter 01</h3>
-        <p>Eliminations on the fly.</p>
-        <div class="price">$17.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-    <li>
-      <a href="the-lighter-igniter.html">
-        <img src="images/The Lighter (2).jpg" alt="The lighter 2"/>
-        <h3>The Lighter Igniter</h3>
-        <p>Now with twice the light, twice the power, and twice the price.</p>
-        <div class="price">$25.99</div>
-      </a>
-      <button class="add-to-cart">Add to Cart</button>
-    </li>
-  </ul>  
-  <script>
-    // JavaScript to handle adding to cart
-    const buttons = document.querySelectorAll('.add-to-cart');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const product = btn.parentElement;
-        const id = product.dataset.id;
-        const name = product.dataset.name;
-        const price = product.dataset.price;
-  
-        // Get current cart from localStorage or empty array
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-        // Check if product already in cart
-        let existing = cart.find(item => item.id === id);
-        if (existing) {
-          existing.quantity += 1;
-        } else {
-          cart.push({ id, name, price: parseFloat(price), quantity: 1 });
-        }
-  
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${name} added to cart!`);
-      });
-    });
+      </li>
+      <li data-id="2" data-name="Xtreme PyroPest" data-price="199.99">
+        <a href="XtremePest.html">
+          <img src="images/PyroPestv2.jpg" alt="Xtreme PyroPest" />
+          <h3>Xtreme PyroPest</h3>
+          <p>Because bugs deserve brutality.</p>
+          <div class="price">$199.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+      <li data-id="3" data-name="PyroPest HT V1" data-price="89.99">
+        <a href="PyroPest1.html">
+          <img src="images/PyroPestv1.jpg" alt="PyroPest V1" />
+          <h3>PyroPest HT V1</h3>
+          <p>Obliterate the apocalyptic infestation.</p>
+          <div class="price">$89.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+      <li data-id="4" data-name="Shield-Off Insect Repellent 10 OZ." data-price="11.99">
+        <a href="shield-off-10oz.html">
+          <img src="images/Shield-off 67 (1).jpg" alt="Bug Repellent 10"/>
+          <h3>Shield-Off Insect Repellent 10 OZ.</h3>
+          <p>Bug off you dang insects!</p>
+          <div class="price">$11.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+      <li data-id="5" data-name="Shield-Off Insect Repellent 6 OZ." data-price="9.99">
+        <a href="shield-off-6oz.html">
+          <img src="images/Shield-off 67 (2).jpg" alt="Bug Repellent 6"/>
+          <h3>Shield-Off Insect Repellent 6 OZ.</h3>
+          <p>Bugs aren't immune to this stuff.</p>
+          <div class="price">$9.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+      <li data-id="6" data-name="Shield-Off Tick Repellent 6 OZ." data-price="10.99">
+        <a href="shield-off-tick-repellent.html">
+          <img src="images/Shield-off 67 (3).jpg" alt="Tick Repellent 6"/>
+          <h3>Shield-Off Tick Repellent 6 OZ.</h3>
+          <p>Make ticks fear you as you pass by.</p>
+          <div class="price">$10.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+      <li data-id="7" data-name="Shield-Off Insect Repellent 8 OZ." data-price="11.99">
+        <a href="shield-off-8oz.html">
+          <img src="images/Shield-off 67 (1).jpg" alt="Bug Repellent"/>
+          <h3>Shield-Off Insect Repellent 8 OZ.</h3>
+          <p>Keep bugs away all day, every day.</p>
+          <div class="price">$11.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+      <li data-id="8" data-name="The Lighter 01" data-price="17.99">
+        <a href="the-lighter-01.html">
+          <img src="images/The Lighter (1).jpg" alt="The lighter"/>
+          <h3>The Lighter 01</h3>
+          <p>Eliminations on the fly.</p>
+          <div class="price">$17.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+      <li data-id="9" data-name="The Lighter Igniter" data-price="25.99">
+        <a href="the-lighter-igniter.html">
+          <img src="images/The Lighter (2).jpg" alt="The lighter 2"/>
+          <h3>The Lighter Igniter</h3>
+          <p>Now with twice the light, twice the power, and twice the price.</p>
+          <div class="price">$25.99</div>
+        </a>
+        <button class="add-to-cart">Add to Cart</button>
+      </li>
+    </ul>  
 
-  </script>
-</body>
+    <script>
+      // JavaScript to handle adding to cart
+      const buttons = document.querySelectorAll('.add-to-cart');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const product = btn.closest('li');  // Correct way to find closest <li> element
+          const id = product.dataset.id;
+          const name = product.dataset.name;
+          const price = product.dataset.price;
+
+          // Get current cart from localStorage or empty array
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+          // Check if product already in cart
+          let existing = cart.find(item => item.id === id);
+          if (existing) {
+            existing.quantity += 1;
+          } else {
+            cart.push({ id, name, price: parseFloat(price), quantity: 1 });
+          }
+
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert(`${name} added to cart!`);
+        });
+      });
+    </script>
+  </body>
 </html>
+
