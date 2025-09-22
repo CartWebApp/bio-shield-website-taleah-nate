@@ -22,12 +22,6 @@ body {
   color: #333;
 }
 
-/* Header styles */
-header {
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
 
 header > img {
   max-width: 150px;
@@ -90,6 +84,7 @@ header > img {
 /* Typography */
 h1 {
   margin: 0;
+  font-family: "Bungee Spice", sans-serif;
 }
 
 /* Utility classes */
@@ -203,6 +198,21 @@ button:hover {
   flex-wrap: wrap;
   margin-top: 20px;
   gap: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+#results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(0, 0, 0);
+  border: 1px solid #ccc;
+  width: 300px;
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
 }
 
 #search > h2 {
@@ -257,6 +267,9 @@ button:hover {
   top: 50%;       /* middle of image */
   left: 50%;      /* center horizontally */
   transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.33);
+  padding: 1rem;
+  border-radius:8px;
 }
 
 .hero-content h2 {
@@ -290,10 +303,7 @@ button:hover {
         }
 
 .shop-button {
-    position: absolute;
-    top: 150px; /* move button above the images */
-    left: 50%;
-    transform: translateX(-50%);
+  margin-top: 0.5rem;
     background-color: rgb(236, 66, 47);
     color: rgb(255, 255, 255);
     border: none;
@@ -367,14 +377,14 @@ button:hover {
     .shop-button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #ff6f61;
+      background-color: #f70f07;
       color: white;
       text-decoration: none;
       border-radius: 5px;
       font-size: 1.2rem;
     }
     .shop-button:hover {
-      background-color: #ff4c39;
+      background-color: #ea5a36;
     }
     .image-footer img {
       width: 150px;
@@ -449,6 +459,10 @@ button:hover {
       background-color: #ff4c39;
     }
 
+    .shadow {
+text-shadow:0 1px 3px rgba(0, 0, 0, 0.33)
+    }
+
     .faq {
   margin-top: 50px;
   background-color: #ff8c00; /* Standard orange background */
@@ -484,4 +498,8 @@ footer {
       color: white;
     }
 
-  
+  h2 {
+  font-family: 'Bungee Spice', cursive;
+}
+
+
