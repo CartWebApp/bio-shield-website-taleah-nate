@@ -1,11 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>PyroPest T5 V1 - Bio-Shield</title>
-  <link rel="stylesheet" href="bs.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Home - Bio-Shield</title>
+  <meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
+  <link rel="stylesheet" href="bs.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">  <script>
+    const items = [
+  { name: "PyroPest T5 V3", img: "images/PyroPestv3.jpg", url: "pyropest-t5-v3.html" },
+  { name: "Xtreme PyroPest", img: "images/PyroPestv2.jpg", url: "xtreme-pyropest.html" },
+  { name: "PyroPest HT V1", img: "images/PyroPestv1.jpg", url: "pyropest-ht-v1.html" },
+  { name: "Shield-Off Insect Repellent 10 OZ.", img: "images/Shield-off 67 (1).jpg", url: "#" },
+  { name: "Shield-Off Insect Repellent 6 OZ.", img: "images/Shield-off 67 (2).jpg", url: "#" },
+  { name: "Shield-Off Tick Repellent 6 OZ.", img: "images/Shield-off 67 (3).jpg", url: "#" },
+  { name: "Shield-Off Insect Repellent 8 OZ.", img: "images/Shield-off 67 (1).jpg", url: "#" },
+  { name: "The Lighter 01", img: "images/The Lighter (1).jpg", url: "#" },
+  { name: "The Lighter Igniter", img: "images/The Lighter (2).jpg", url: "#" }
+];
+
+
+
+    function searchItems() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
+
+  if (input === '') {
+    return; // no input, no results
+  }
+
+  const filtered = items.filter(item => item.name.toLowerCase().includes(input));
+
+  if (filtered.length === 0) {
+    resultsDiv.innerHTML = '<em>No results found</em>';
+    return;
+  }
+
+  filtered.forEach(item => {
+  const div = document.createElement('div');
+  div.classList.add('result-item');
+
+  // Create a container for image and text
+  const container = document.createElement('span');
+  container.style.display = 'flex';
+  container.style.alignItems = 'center';
+
+  // Create image element
+  const img = document.createElement('img');
+  img.src = item.img;
+  img.alt = item.name;
+  img.style.width = '40px';
+  img.style.height = '40px';
+  img.style.objectFit = 'contain';
+  img.style.marginRight = '10px';
+
+  // Create text node
+  const text = document.createElement('span');
+  text.textContent = item.name;
+  text.style.fontSize = '1rem';
+
+  // Append img and text to container
+  container.appendChild(img);
+  container.appendChild(text);
+  div.appendChild(container);
+
+  div.onclick = () => window.location.href = item.url;
+  resultsDiv.appendChild(div);
+  });
+}
+
+  
+  </script>
+  <style>
+    #results {
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      max-width: 300px;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+    }
+
+    .result-item {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .result-item:hover {
+      background-color: #efefef;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -114,7 +204,7 @@
       font-size: 1.3rem;
       border-radius: 50px;
       text-transform: uppercase;
-      transition: background 0.3s ease;
+      transition:  0.3s ease;
       cursor: pointer;
       border: none;
     }
@@ -179,10 +269,11 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+<header>
   <nav class="navbar">
     <div class="navbar-logo">
-      <h1>Bio-Shield</h1>
+      <img src="images/Biologo.jpg"/>
+        <h1 class="Bungee gradient">Bio-Shield</h1>
     </div>
     <div>
       <a href="index.html">Home</a>
@@ -191,6 +282,7 @@
       <a href="support.html">Support</a>
     </div>
   </nav>
+</header>
 
   <!-- Product Page -->
   <div class="product-page">
@@ -206,7 +298,7 @@
   </div>
 
   <!-- Product Details -->
-  <div class="product-details">
+  <section class="product-details">
     <h2>What's Inside the PyroPest T5 V1?</h2>
     <p>All the essentials for burning bugs to a crisp:</p>
     <ul>
@@ -226,10 +318,10 @@
       <li>Press the trigger and let the flames do their magic. Say goodbye to bugs!</li>
       <li>Remember: You're holding fire—use it responsibly. This is a tool of extermination, not a party favor!</li>
     </ol>
-  </div>
+  </section>
 
   <!-- Warnings Section -->
-  <div class="warnings">
+  <section class="warnings">
     <h2>Important Warnings:</h2>
     <ul>
       <li>Do NOT aim at any living creature, including bugs and any unsuspecting neighbors.</li>
@@ -238,7 +330,7 @@
       <li>Ensure you have a safe, non-flammable area for use. Don't go trying to start a bonfire in the backyard without some precautions.</li>
       <li><strong>Not a toy.</strong> You will definitely need to sign a waiver (figuratively, of course).</li>
     </ul>
-  </div>
+  </section>
 
 </body>
 </html>

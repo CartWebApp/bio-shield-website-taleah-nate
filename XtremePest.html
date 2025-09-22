@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+  </style>
   <title>Xtreme PyroPest - Bio-Shield</title>
   <link rel="stylesheet" href="bs.css">
   <style>
@@ -179,18 +182,27 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="navbar-logo">
-      <h1>Bio-Shield</h1>
-    </div>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="store.html">Store</a>
-      <a href="about.html">About</a>
-      <a href="support.html">Support</a>
-    </div>
-  </nav>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
+        <h1 class="bungee gradient">Bio-Shield</h1>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+            <section id="search">
+
+        <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()"
+        autocomplete="off" />
+        
+        <div id="results"></div>
+      </section>
+    </nav>
+  </header>
 
   <!-- Product Page -->
   <div class="product-page">
