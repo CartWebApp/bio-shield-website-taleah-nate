@@ -1,16 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
-    <title>Exterminators - Bio-Shield</title>
-    <link rel="stylesheet" href="bs.css">
-  <script src="Essentials.js"></script>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-      
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Home - Bio-Shield</title>
+  <meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
+  <link rel="stylesheet" href="bs.css">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+   <script>
+    const items = [
+  { name: "PyroPest T5 V3", img: "images/PyroPestv3.jpg", url: "Pyropest3.html" },
+  { name: "Xtreme PyroPest", img: "images/PyroPestv2.jpg", url: "XtremePest.html" },
+  { name: "PyroPest HT V1", img: "images/PyroPestv1.jpg", url: "Pyropest1.html" },
+  { name: "Shield-Off Insect Repellent 10 OZ.", img: "images/Shield-off 67 (1).jpg", url: "Shieldoff.html" },
+  { name: "Shield-Off Insect Repellent 6 OZ.", img: "images/Shield-off 67 (2).jpg", url: "Shieldoff6.html" },
+  { name: "Shield-Off Tick Repellent 6 OZ.", img: "images/Shield-off 67 (3).jpg", url: "Shieldoffticks.html" },
+  { name: "Shield-Off Insect Repellent 8 OZ.", img: "images/Shield-off 67 (1).jpg", url: "Shieldoff8.html" },
+  { name: "The Lighter 01", img: "images/The Lighter (1).jpg", url: "#" },
+  { name: "The Lighter Igniter", img: "images/The Lighter (2).jpg", url: "#" }
+];
+
+
+
+    function searchItems() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
+
+  if (input === '') {
+    return; // no input, no results
+  }
+
+  const filtered = items.filter(item => item.name.toLowerCase().includes(input));
+
+  if (filtered.length === 0) {
+    resultsDiv.innerHTML = '<em>No results found</em>';
+    return;
+  }
+
+  filtered.forEach(item => {
+  const div = document.createElement('div');
+  div.classList.add('result-item');
+
+  // Create a container for image and text
+  const container = document.createElement('span');
+  container.style.display = 'flex';
+  container.style.alignItems = 'center';
+
+  // Create image element
+  const img = document.createElement('img');
+  img.src = item.img;
+  img.alt = item.name;
+  img.style.width = '40px';
+  img.style.height = '40px';
+  img.style.objectFit = 'contain';
+  img.style.marginRight = '10px';
+
+  // Create text node
+  const text = document.createElement('span');
+  text.textContent = item.name;
+  text.style.fontSize = '1rem';
+
+  // Append img and text to container
+  container.appendChild(img);
+  container.appendChild(text);
+  div.appendChild(container);
+
+  div.onclick = () => window.location.href = item.url;
+  resultsDiv.appendChild(div);
+  });
+}
+
+  
+  </script>
+  <style>
+    /* --- Complex, Striking Animations for Store Page --- */
+ul.products li {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  opacity: 0;
+  transform: translateY(50px) scale(0.95) rotateX(10deg);
+  animation: fadeBounce 1s ease forwards;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stagger each product card animation */
+ul.products li:nth-child(1) { animation-delay: 0.1s; }
+ul.products li:nth-child(2) { animation-delay: 0.2s; }
+ul.products li:nth-child(3) { animation-delay: 0.3s; }
+ul.products li:nth-child(4) { animation-delay: 0.4s; }
+ul.products li:nth-child(5) { animation-delay: 0.5s; }
+ul.products li:nth-child(6) { animation-delay: 0.6s; }
+ul.products li:nth-child(7) { animation-delay: 0.7s; }
+ul.products li:nth-child(8) { animation-delay: 0.8s; }
+ul.products li:nth-child(9) { animation-delay: 0.9s; }
+
+/* Card floating animation (looping subtle float) */
+ul.products li {
+  animation: fadeBounce 1s ease forwards, floaty 6s ease-in-out infinite;
+}
+
+/* Hover effect with 3D tilt + glow */
+ul.products li:hover {
+  transform: scale(1.05) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 12px 25px rgba(236, 60, 20, 0.6);
+}
+
+/* Add shimmer effect on product images */
+ul.products li img {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+ul.products li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 60%);
+  transform: skewX(-25deg);
+  animation: shimmer 3s infinite;
+  z-index: 2;
+}
+
+/* Button pulse animation */
+ul.products li button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: rgba(236, 60, 20, 0.918);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+ul.products li button:hover {
+  background-color: #f0ed3b;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* --- Keyframes --- */
+@keyframes fadeBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8) rotateX(15deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-15px) scale(1.05) rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 5px rgba(236, 60, 20, 0.5); }
+  50% { transform: scale(1.1); box-shadow: 0 0 15px rgba(236, 60, 20, 0.9); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+    #results {
+      margin-top: 10px;
+      border: 1px solid #0b0a0a;
+      max-width: 300px;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+    }
+
+    .result-item {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .result-item:hover {
+      background-color: #100f0f;
+    }
+
+
+
       #results {
         margin-top: 10px;
         border: 1px solid #ccc;
@@ -194,32 +390,34 @@
       </li>
     </ul>  
 
-    <script>
-      // JavaScript to handle adding to cart
-      const buttons = document.querySelectorAll('.add-to-cart');
-      buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const product = btn.closest('li');  // Correct way to find closest <li> element
-          const id = product.dataset.id;
-          const name = product.dataset.name;
-          const price = product.dataset.price;
+<script>
+  // JavaScript to handle adding to cart
+  const buttons = document.querySelectorAll('.add-to-cart');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const product = btn.closest('li');  // Correct way to find closest <li> element
+      const id = product.dataset.id;
+      const name = product.dataset.name;
+      const price = product.dataset.price;
+      const img = product.querySelector('img').src; // ✅ get product image
 
-          // Get current cart from localStorage or empty array
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // Get current cart from localStorage or empty array
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-          // Check if product already in cart
-          let existing = cart.find(item => item.id === id);
-          if (existing) {
-            existing.quantity += 1;
-          } else {
-            cart.push({ id, name, price: parseFloat(price), quantity: 1 });
-          }
+      // Check if product already in cart
+      let existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id, name, price: parseFloat(price), quantity: 1, img }); // ✅ save img too
+      }
 
-          localStorage.setItem('cart', JSON.stringify(cart));
-          alert(`${name} added to cart!`);
-        });
-      });
-    </script>
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
 
       <footer>
     <p>&copy; 2025 Bio-Shield. All rights reserved. | <a href="privacy.html" style="color: white;">Privacy Policy</a> | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D" style="color: white;">Terms & Conditions</a></p>

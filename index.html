@@ -1,216 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
-  </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <title>Home - Bio-Shield</title>
-  <meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
-  <link rel="stylesheet" href="bs.css">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">  <script>
-    const items = [
-  { name: "PyroPest T5 V3", img: "images/PyroPestv3.jpg", url: "Pyropest3.html" },
-  { name: "Xtreme PyroPest", img: "images/PyroPestv2.jpg", url: "XtremePest.html" },
-  { name: "PyroPest HT V1", img: "images/PyroPestv1.jpg", url: "Pyropest1.html" },
-  { name: "Shield-Off Insect Repellent 10 OZ.", img: "images/Shield-off 67 (1).jpg", url: "Shieldoff.html" },
-  { name: "Shield-Off Insect Repellent 6 OZ.", img: "images/Shield-off 67 (2).jpg", url: "Shieldoff6.html" },
-  { name: "Shield-Off Tick Repellent 6 OZ.", img: "images/Shield-off 67 (3).jpg", url: "Shieldoffticks.html" },
-  { name: "Shield-Off Insect Repellent 8 OZ.", img: "images/Shield-off 67 (1).jpg", url: "Shieldoff8.html" },
-  { name: "The Lighter 01", img: "images/The Lighter (1).jpg", url: "#" },
-  { name: "The Lighter Igniter", img: "images/The Lighter (2).jpg", url: "#" }
-];
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Bio-Shield</title>
+<meta name="description" content="Bio-Shield - Obliterate the infestation with our ultimate pest solution.">
+<link rel="stylesheet" href="bs.css">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
+<style>
 
-
-    function searchItems() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  const resultsDiv = document.getElementById('results');
-  resultsDiv.innerHTML = '';
-
-  if (input === '') {
-    return; // no input, no results
-  }
-
-  const filtered = items.filter(item => item.name.toLowerCase().includes(input));
-
-  if (filtered.length === 0) {
-    resultsDiv.innerHTML = '<em>No results found</em>';
-    return;
-  }
-
-  filtered.forEach(item => {
-  const div = document.createElement('div');
-  div.classList.add('result-item');
-
-  // Create a container for image and text
-  const container = document.createElement('span');
-  container.style.display = 'flex';
-  container.style.alignItems = 'center';
-
-  // Create image element
-  const img = document.createElement('img');
-  img.src = item.img;
-  img.alt = item.name;
-  img.style.width = '40px';
-  img.style.height = '40px';
-  img.style.objectFit = 'contain';
-  img.style.marginRight = '10px';
-
-  // Create text node
-  const text = document.createElement('span');
-  text.textContent = item.name;
-  text.style.fontSize = '1rem';
-
-  // Append img and text to container
-  container.appendChild(img);
-  container.appendChild(text);
-  div.appendChild(container);
-
-  div.onclick = () => window.location.href = item.url;
-  resultsDiv.appendChild(div);
-  });
+body {
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ff512f, #dd2476, #f7f7f7, #ffffff);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  color: #000;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
-  
-  </script>
-  <style>
-    #results {
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      max-width: 300px;
-      padding: 5px;
-      font-family: Arial, sans-serif;
-    }
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    .result-item {
-      padding: 5px;
-      cursor: pointer;
-    }
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    .result-item:hover {
-      background-color: #efefef;
-    }
-  </style>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #222;
+  color: white;
+  animation: slideDown 1s ease forwards;
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+@keyframes slideDown { to { opacity: 1; transform: translateY(0); } }
+
+.navbar-logo img { width: 50px; animation: glowPulse 3s ease-in-out infinite; }
+.navbar-logo h1 { font-family: 'Bungee Spice', cursive; animation: textGlow 2s ease infinite alternate; }
+
+@keyframes glowPulse { 0%, 100% { filter: drop-shadow(0 0 5px #ff512f); } 50% { filter: drop-shadow(0 0 20px #ffed3b); } }
+@keyframes textGlow { 0%,100%{color:#fff;text-shadow:0 0 10px #ff512f,0 0 20px #ff512f;}50%{color:#ffed3b;text-shadow:0 0 30px #ffed3b,0 0 60px #ff512f;} }
+
+.navbar-links { list-style: none; display: flex; gap: 20px; }
+.navbar-links li { opacity: 0; transform: translateY(-20px); animation: navPop 0.8s ease forwards; }
+.navbar-links li:nth-child(1) { animation-delay:0.5s; } 
+.navbar-links li:nth-child(2) { animation-delay:0.7s; } 
+.navbar-links li:nth-child(3) { animation-delay:0.9s; } 
+.navbar-links li:nth-child(4) { animation-delay:1.1s; } 
+.navbar-links li:nth-child(5) { animation-delay:1.3s; }
+@keyframes navPop { to { opacity:1; transform:translateY(0); } }
+
+#searchInput { opacity:0; transform: scale(0.8); animation: elasticPop 1.2s ease 1.5s forwards; }
+@keyframes elasticPop {0%{opacity:0;transform:scale(0.8);}60%{opacity:1;transform:scale(1.2);}100%{opacity:1;transform:scale(1);}}
+
+.hero { position: relative; text-align: center; overflow: hidden; margin-bottom: 50px; }
+.hero img { width: 100%; max-height: 400px; object-fit: cover; opacity:0; animation: fadeInHero 1.5s forwards; }
+.hero-content { position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); color:rgb(249, 247, 247); text-shadow:2px 2px 8px rgba(0,0,0,0.6); }
+
+@keyframes fadeInHero { to { opacity:1; } }
+
+.product-images, .reviews, .available-stores, .faq { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; opacity:0; transform: translateY(20px); transition: all 0.8s ease; }
+.fade-in { opacity:1; transform: translateY(0); }
+
+.product-card, .review-card { background:white; border-radius:12px; padding:20px; text-align:center; width:250px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.product-card:hover, .review-card:hover { transform: scale(1.05); box-shadow:0 12px 24px rgba(0,0,0,0.2); }
+.product-card img { width:100%; border-radius:10px; transition: transform 0.3s ease; }
+.product-card:hover img { transform: scale(1.03); }
+
+.available-stores img { width:150px; transition: transform 0.3s ease; }
+.available-stores img:hover { transform: scale(1.1); }
+
+.faq ul { list-style:none; padding:0; }
+.faq li { margin-bottom:15px; font-size:1rem; }
+.shop-button { display:inline-block; padding:10px 20px; background:#ff512f; color:white; border-radius:8px; font-weight:bold; text-decoration:none; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.shop-button:hover { transform: scale(1.1); box-shadow:0 0 20px #ff512f; }
+
+#results { margin-top:10px; border:1px solid #000000; max-width:300px; padding:5px; font-family:Arial,sans-serif; border-radius:6px; background:rgb(7, 6, 6); box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+.result-item { padding:5px; cursor:pointer; display:flex; align-items:center; gap:10px; transition: all 0.3s ease; }
+.result-item:hover { background:#f1eeee; transform: scale(1.03); }
+</style>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
-        <h1 class="bungee gradient">Bio-Shield</h1>
-      </div>
-      <ul class="navbar-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="store.html">Store</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="cart.html">Cart</a></li>
-      </ul>
-            <section id="search">
-
-        <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()"
-        autocomplete="off" />
-        
-        <div id="results"></div>
-      </section>
-    </nav>
-  </header>
-  
-  <div class="hero">
-    <img src="images/coverart.jpg" alt="Illustration of bugs being defeated by Bio-Shield spray"/>
-    <div class="hero-content">
-  <h2>Obliterate the Infestation!</h2>
-  <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 1.5em; font-weight: 700;">When pests invade, we don’t just eliminate—we obliterate.</p>
-  <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 1.2em; font-weight: 700;">Trust Bio-Shield to eradicate your Pest Infestation,<br>restoring tranquility to your home.</p>
-      <a href="store.html" class="shop-button" role="button">Visit Our Store</a>
+<header>
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="images/Biologo.jpg" alt="Bio-Shield logo"/>
+      <h1 class="bungee gradient">Bio-Shield</h1>
     </div>
+    <ul class="navbar-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="cart.html">Cart</a></li>
+    </ul>
+    <div id="search">
+      <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchItems()" autocomplete="off">
+      <div id="results"></div>
+    </div>
+  </nav>
+</header>
+
+<div class="hero fade-in-on-scroll">
+  <img src="images/coverart.jpg" alt="Illustration of bugs being defeated by Bio-Shield spray"/>
+  <div class="hero-content">
+    <h2>Obliterate the Infestation!</h2>
+    <p>When pests invade, we don’t just eliminate—we obliterate.</p>
+    <p>Trust Bio-Shield to eradicate your Pest Infestation, restoring tranquility to your home.</p>
+    <a href="store.html" class="shop-button" role="button">Visit Our Store</a>
   </div>
+</div>
 
-  <div class="product-images">
-    <div class="product-card">
-      <img src="images/PyroPestv3.jpg" alt="The New PyroPest" />
-      <h3>The<strong> BRAND NEW</strong> PyroPest</h3>
-      <a href="store.html">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="images/Shield-off 67 (4).jpg" alt="repellent" />
-      <h3>Mosquitoes and Ticks</h3>
-      <a href="store.html">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="images/The Lighter (1).jpg" alt="lighters" />
-      <h3> Bug Lighters</h3>
-      <a href="store.html">Buy Now</a>
-    </div>
+<div class="product-images fade-in-on-scroll">
+  <div class="product-card"><img src="images/PyroPestv3.jpg" alt="The New PyroPest"><h3>The <br>  <strong>BRAND NEW</strong> <br> PyroPest</h3><a href="store.html">Buy Now</a></div>
+  <div class="product-card"><img src="images/Shield-off 67 (4).jpg" alt="repellent"><h3>Mosquitoes and Ticks</h3><a href="store.html">Buy Now</a></div>
+  <div class="product-card"><img src="images/The Lighter (1).jpg" alt="lighters"><h3>Bug Lighters</h3><a href="store.html">Buy Now</a></div>
+</div>
+
+<div class="reviews fade-in-on-scroll">
+  <div class="review-card"><h3>Steve B.</h3><p>"I’m not saying it was a flamethrower, but my ants won’t ever bug me again."</p></div>
+  <div class="review-card"><h3>Janet K.</h3><p>"I’ve never seen bugs run so fast. This stuff is truly pure magic in a bottle!"</p></div>
+  <div class="review-card"><h3>Paul S.</h3><p>"My only regret? Not using it sooner. I was able to take out a small city of termites."</p></div>
+</div>
+
+<div class="available-stores fade-in-on-scroll">
+  <h2>Available at the following stores:</h2>
+  <div class="store-images">
+    <img src="images/TheHomeDepot.svg" alt="Home Depot">
+    <img src="images/Buc-ee's.jpg" alt="Buc-ee's">
+    <img src="images/Toys__R__Us_logo.jpg" alt="Toys R Us">
   </div>
+</div>
 
-
-  <div class="reviews">
-    <div class="review-card">
-      <h3>Steve B.</h3>
-      <p>"I’m not saying it was a flamethrower, but my ants won’t ever bug me again."</p>
-    </div>
-
-    <div class="review-card">
-      <h3>Janet K.</h3>
-      <p>"I’ve never seen bugs run so fast. This stuff is truly pure magic in a bottle!"</p>
-    </div>
-    <div class="review-card">
-      <h3>Paul S.</h3>
-      <p>"My only regret? Not using it sooner. I was able to take out a small city of termites."</p>
-    </div>
-  </div>
-  <div class="available-stores">
-    <h2>Available at the following stores:</h2>
-    <div class="store-images">
-      <img class="scale-in" src="images/TheHomeDepot.svg" alt="Home Depot">
-      <img class="scale-in" src="images/Buc-ee's.jpg" alt="Haha Buc-ee's">
-      <img class="scale-in" src="images/Toys__R__Us_logo.jpg" alt="Please don't sue.">
-
-    </div>
-  </div>
-
-  <div class="faq">
- <html>
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    .faq li {
-      font-family: 'Roboto', sans-serif;
-    }
-  </style>
-</head>
-<body>
-<div class="faq">
-  <h2 class="shadow">Frequently Asked Questions</h2>
+<div class="faq fade-in-on-scroll">
+  <h2>Frequently Asked Questions</h2>
   <ul>
-    <li><strong>Q: Is the PyroPest safe to use in my garden?</strong><br> A: Absolutely.</li>
-    <li><strong>Q: Is Bio-Shield safe to use around pets?</strong><br> A: Dude..They're flamethrowers...</li>
-    <li><strong>Q: Does it work on all bugs?</strong><br> A: All bugs tremble before Bio-Shield.</li>
-    <li><strong>Q: How do I clean up after using Bio-Shield?</strong><br> A: Simply wipe down.</li>
-    <li><strong>Q:how do i actually buy these?</strong><br> A: No. we don't trust you with a flamethrower. this is just a project.<br> please dont send us money.</li>
+    <li><strong>Q: Is the PyroPest safe to use in my garden?</strong><br>A: Absolutely.</li>
+    <li><strong>Q: Is Bio-Shield safe to use around pets?</strong><br>A: Dude... They're flamethrowers.</li>
+    <li><strong>Q: Does it work on all bugs?</strong><br>A: All bugs tremble before Bio-Shield.</li>
+    <li><strong>Q: How do I clean up after using Bio-Shield?</strong><br>A: Simply wipe down.</li>
+    <li><strong>Q: How do I actually buy these?</strong><br>A: No. we don't trust you with a flamethrower. This is just a project.</li>
   </ul>
 </div>
 
-      <footer>
-    <p>&copy; 2025 Bio-Shield. All rights reserved. | <a href="privacy.html" style="color: white;">Privacy Policy</a> | <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D" style="color: white;">Terms & Conditions</a></p>
-  </footer>
+<footer>
+<p>&copy; 2025 Bio-Shield. All rights reserved. | 
+  <a href="https://www.youtube.com/watch?v=YSWMYnuOImg&t=12s" style="color:white;">Privacy Policy</a> |
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUIcmlja3JvbGw%3D" style="color:white;">Terms & Conditions</a>
+</p>
 
-  <script>
-    document.addEventListener('click', function (event) {
-      const searchBox = document.getElementById('search');
-      const results = document.getElementById('results');
-  
-      if (!searchBox.contains(event.target)) {
-        results.innerHTML = ''; // clear results if clicked outside
-      }
+</footer>
+
+<script>
+// Search functionality
+const items = [
+  { name: "PyroPest T5 V3", img: "images/PyroPestv3.jpg", url: "Pyropest3.html" },
+  { name: "Xtreme PyroPest", img: "images/PyroPestv2.jpg", url: "XtremePest.html" },
+  { name: "PyroPest HT V1", img: "images/PyroPestv1.jpg", url: "Pyropest1.html" }
+];
+
+function searchItems() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '';
+  if(!input) return;
+
+  const filtered = items.filter(item => item.name.toLowerCase().includes(input));
+  if(filtered.length===0){ resultsDiv.innerHTML='<em>No results found</em>'; return; }
+
+  filtered.forEach(item=>{
+    const div = document.createElement('div');
+    div.classList.add('result-item');
+    div.innerHTML = `<img src="${item.img}" alt="${item.name}" style="width:40px;height:40px;object-fit:contain;"><span>${item.name}</span>`;
+    div.onclick=()=>window.location.href=item.url;
+    resultsDiv.appendChild(div);
+  });
+}
+
+// Scroll-triggered fade-in
+document.addEventListener('DOMContentLoaded', () => {
+  const faders = document.querySelectorAll('.fade-in-on-scroll');
+  const observer = new IntersectionObserver((entries, obs)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      entry.target.classList.add('fade-in');
+      obs.unobserve(entry.target);
     });
-  </script>
+  },{threshold:0.1});
+  faders.forEach(fader=>observer.observe(fader));
+});
+
+// Close search results on click outside
+document.addEventListener('click', function(event){
+  const searchBox=document.getElementById('search');
+  const results=document.getElementById('results');
+  if(!searchBox.contains(event.target)) results.innerHTML='';
+});
+</script>
 </body>
 </html>

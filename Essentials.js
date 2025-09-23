@@ -30,3 +30,4 @@
   if (confirm(`${name} added to cart! Go to your cart now?`)) {
   window.location.href = 'cart.html';
 }
+
